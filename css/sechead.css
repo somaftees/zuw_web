@@ -1,0 +1,88 @@
+  sec-head{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  sec-head .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 57px;
+  }
+  sec-head .container::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #a2a2a2;
+    bottom: 0;
+    width: calc(100% - 30px);
+    left: 15px;
+  }
+  
+  sec-head nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  sec-head nav .toggle-menu {
+    color: white;
+    font-size: 40px;
+  }
+  @media screen and (min-width: 1200px) {
+    sec-head nav .toggle-menu {
+      display: none;
+    }
+  }
+  sec-head nav ul {
+    display: flex;
+  }
+  @media screen and (max-width: 1200px) {
+    sec-head nav ul {
+      display: none;
+    }
+    sec-head nav .toggle-menu:hover + ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgb(0 0 0 / 50%);
+    }
+    sec-head nav ul li a {
+      padding: 1px !important;
+    }
+  }
+  sec-head nav ul li a {
+    padding: 20px 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+  }
+  sec-head nav ul li a.active,
+  sec-head nav ul li a:hover {
+    color:darkgoldenrod;
+    border-bottom: 2px solid darkgoldenrod;
+  }
+  sec-head nav .form {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 3px solid rgba(203, 165, 10, 0.762);
+  }
+  sec-head nav .form i {
+    color: white;
+    position: absolute;
+    font-size: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
